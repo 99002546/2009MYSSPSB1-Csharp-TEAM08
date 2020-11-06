@@ -1,0 +1,160 @@
+﻿@model List<StudentData.Models.Studentdata>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Display</title>
+    <style>
+
+        h1{
+            text-align:center;
+        }
+        
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(45deg, #49a09d, #5f2c82);
+            font-family: sans-serif;
+            font-weight: 100;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        table {
+            width: 800px;
+            border-collapse: collapse;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1) ;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            background-color: rgba(255,255,255,0.2);
+            color: #fff;
+        }
+
+        th {
+            text-align: left;
+        }
+
+        thead {
+            th{
+            background-color: #55608f;
+        }
+
+        }
+
+        tbody {
+            tr
+
+        {
+            &:hover
+
+        {
+            background-color: rgba(255,255,255,0.3);
+        }
+
+        }
+
+        td {
+            position: relative;
+            &:hover
+
+        {
+            &:before
+
+        {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -9999px;
+            bottom: -9999px;
+            background-color: rgba(255,255,255,0.2);
+            z-index: -1;
+        }
+
+        }
+        }
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Details</h1>
+    <div class="topnav">
+        
+    </div>
+    <div>
+
+        <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Last Name</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>dob</th>
+                        <th>Course</th>
+                        <th>Year</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var s in Model)
+                    {
+                        <tr>
+                            <td>@s.stuid</td>
+                            <td>@s.stufname</td>
+                            <td>@s.stulname</td>
+                            <td>@s.stumname</td>
+                            <td>@s.stuaddress</td>
+                            <td>@s.stuphone</td>
+                            <td>@s.studob</td>
+                            <td>@s.stucourse</td>
+                            <td>@s.stuyear</td>
+
+                            <td>
+                                <button style=" text-decoration:none;background: rgba(0,0,0,0.1); text-align: center; border: solid 2px #fff;color: wheat; line-height: 20px; border-radius: 3px 3px 3px 3px;">
+                                    @Html.ActionLink("Edit", "Find", new { id = s.stuid })
+                                </button>
+                                <button style=" text-decoration:none;background: rgba(0,0,0,0.1); text-align: center; border: solid 2px #fff;color: wheat; line-height: 20px; border-radius: 3px 3px 3px 3px;">@Html.ActionLink("Delete", "DeleteEmployee", new { id = s.stuid })
+                                </button>
+                            </td>
+                        </tr>
+                          
+
+                    }
+
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+
+       
+
+      
+    </div>
+
+</body>
+</html>
+
