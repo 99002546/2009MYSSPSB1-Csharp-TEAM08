@@ -1,0 +1,153 @@
+﻿@model StudentData.Models.LoginTable
+@{
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <script src="https://kit.fontawesome.com/700853341e.js" crossorigin="anonymous"></script>
+
+    <style>
+        #login-div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%,-50%);
+            width: 350px;
+            height: 405px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,.7);
+            padding: 80px 40px;
+            border-radius: 10px;
+        }
+
+        input:focus {
+            box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2);
+        }
+
+            @*#login-div EditorFor {
+                width: 100%;
+                padding: 12px 40px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                font-size: 18px;
+            }*@
+
+        .Editorcontrol {
+            width: 260px;
+            @*margin-left: 10px;*@
+            margin-top: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border: none;
+            outline: none;
+            padding: 10px;
+            font-size: 13px;c
+            color: #fff;
+            text-shadow: 1px 1px 1px rgba(100, 100, 100, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+            box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
+            @*-webkit-transition: box-shadow 0.5s ease;
+            -moz-transition: box-shadow 0.5s ease;
+            -o-transition: box-shadow 0.5s ease;
+            -ms-transition: box-shadow 0.5s ease;
+            transition: box-shadow 0.5s ease;*@
+        }
+
+        body {
+            background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vbWVkaWEucmJsLm1zL2ltYWdlP3U9JTJGZmlsZXMlMkYyMDE3JTJGMDElMkYyMSUyRjYzNjIwNjI5MjQ0MTQ3Mzg1Ny0xNDY5ODgwMDVfZ3JhZHVhdGlvbi5qcGcmaG89aHR0cHMlM0ElMkYlMkZhejYxNjU3OC52by5tc2VjbmQubmV0JnM9Mzg5Jmg9OTU4ODg5ZWZhNTIwNzBjMjFhNmUzOTVjOTU5NmQ1ZjUxNGZmM2I2YjYwYjQxYjNiNDg2MTZkM2EyOGQyYjMzZCZzaXplPTk4MHgmYz0yNjA2MTk1NTk3IiwiZXhwaXJlc19hdCI6MTY2NjY0MTc1Mn0.jqAQMBzRER6cG1EIqj5cAgNhjmFjl3drj9wQMX7htD4/img.jpg?width=1200&height=628");
+            height: 100vh; /* You must set a specified height */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size: cover;
+        }
+
+
+        .field-validation-error {
+            color: red;
+        }
+
+        #profile{
+           margin-left:47%;
+           margin-top:5%
+           
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+      
+        <div id="login-div">
+
+
+            @using (Html.BeginForm("Authorize", "Login", FormMethod.Post))
+            {
+                <table>
+                    <tr>
+                        <td style="width: 260px;text-align:center;color:white;font-size:30px">AdminLogin</td>
+                    </tr>
+                    <tr>
+                        @*<td> @Html.LabelFor(model => model.UserName)</td>*@
+                        @*<td> @Html.TextBoxFor(model => model.UserName, new { Class = "Editorcontrol" })</td>*@
+                    </tr>
+                    <tr>
+
+                        <td> @Html.TextBoxFor(model => model.UserName, new { Class = "Editorcontrol", PlaceHolder = "Username" })</td>
+                    </tr>
+
+                    <tr>
+
+                        <td>@Html.ValidationMessageFor(model => model.UserName)</td>
+                    </tr>
+                    <tr>
+                        @*<td>@Html.LabelFor(model => model.Password)</td>*@
+                        @*<td>@Html.TextBoxFor(model => model.Password, new { Class = "Editorcontrol" })</td>*@
+                    </tr>
+
+                    <tr>
+
+                        <td>@Html.PasswordFor(model => model.Password, new { Class = "Editorcontrol", PlaceHolder = "Password" })</td>
+                    </tr>
+                    <tr>
+
+                        <td>@Html.ValidationMessageFor(model => model.Password)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <label class="field-validation-error">@Html.DisplayFor(model => model.LoginErrorMessage)</label>
+
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <input type="submit" name="name" value="Login" style=" background: transparent; text-align: center; border: solid 2px #fff; margin: 25px  0; width: 275px; color: #fff; line-height: 25px; border-radius: 20px 20px 20px 20px;" />
+                            <hr />
+                            <input type="reset" name="name" value="Reset?" style="background: transparent;
+        text-align: center;
+        border: none;
+        margin:  0;
+        width: 275px;
+        color: #fff" />
+                        </td>
+                    </tr>
+                </table>
+            }
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>
