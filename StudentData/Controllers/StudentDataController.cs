@@ -15,12 +15,12 @@ namespace StudentData.Controllers
             return View();
         }
 
-        public ViewResult Main()
-        {
-           /* var context = new STUDENTDATAEntities();*/
-            /*var model = context.Logins.ToList();*/
-            return View();
-        }
+        //public ViewResult Main()
+        //{
+        //   /* var context = new STUDENTDATAEntities();*/
+        //    /*var model = context.Logins.ToList();*/
+        //    return View();
+        //}
 
         public ViewResult Edisplay()
         {
@@ -28,12 +28,8 @@ namespace StudentData.Controllers
             var model = context.Studentdatas.ToList();
             return View(model);
         }
-        public ViewResult Contact()
-        {
-            var context = new STUDENTDATAEntities();
-            var model = context.Studentdatas.ToList();
-            return View(model);
-        }
+
+
         /* public ViewResult Admin()
          {
              var context = new dat;
