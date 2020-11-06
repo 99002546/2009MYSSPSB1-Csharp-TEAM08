@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="STUDENTDATAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Studentdata">
+    <Key>
+      <PropertyRef Name="stuid" />
+    </Key>
+    <Property Name="stuid" Type="Int32" Nullable="false" />
+    <Property Name="stufname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="stumname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="stulname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="stuaddress" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="stuphone" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="studob" Type="DateTime" Precision="0" />
+    <Property Name="stucourse" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="stuyear" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="STUDENTDATAEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Studentdatas" EntityType="Self.Studentdata" />
+  </EntityContainer>
+</Schema>

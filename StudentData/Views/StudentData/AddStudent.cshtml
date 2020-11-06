@@ -1,0 +1,164 @@
+﻿@model StudentData.Models.Studentdata
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddEmployee</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #ecf1f4;
+            font-family: sans-serif;
+        }
+        .form-wrap {
+            width: 320px;
+            background: none;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color:white;
+        }
+
+        body {
+            background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("https://i1.wp.com/getitwriteonline.com/wp-content/uploads/2018/10/woman-typing-writing-windows.jpg?fit=1280%2C578&ssl=1");
+            height: 100vh; /* You must set a specified height */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size: cover;
+
+
+        }
+
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            background: none;
+            border: 1px solid #fff;
+            border-radius: 3px;
+            padding: 6px 15px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #fff;
+        }
+
+            input[type="button"] {
+                background: #bac675;
+                border: 0;
+                cursor: pointer;
+                color: #3e3d3d;
+            }
+
+                input[type="button"]:hover {
+                    background: #a4b15c;
+                    transition: .6s;
+                }
+
+            input[type="submit"] {
+                background: #bac675;
+                border: 0;
+                cursor: pointer;
+                color: #3e3d3d;
+            }
+
+                input[type="submit"]:hover {
+                    background: #a4b15c;
+                    transition: .6s;
+                }
+
+
+    </style>
+</head>
+<body>
+
+   
+        
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <h1>Student Registration</h1>
+          
+          
+           
+            <table class="form-wrap">
+                <tr>
+                    <td>ID</td>
+                    <td>@Html.TextBoxFor(model => model.stuid)</td>
+                </tr>
+
+                <tr>
+                    <td> First Name</td>
+                    <td>@Html.EditorFor(model => model.stufname)</td>
+                </tr>
+
+                <tr>
+                    <td>Middle Name</td>
+                    <td> @Html.EditorFor(model => model.stumname)</td>
+                </tr>
+
+                <tr>
+                    <td>Last Name</td>
+                    <td>@Html.EditorFor(model => model.stulname)</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>@Html.EditorFor(model => model.stuaddress)</td>
+
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>@Html.EditorFor(model => model.stuphone)</td>
+                </tr>
+                <tr>
+                    <td>Date of birth</td>
+                    <td>  @Html.EditorFor(model => model.studob)</td>
+                </tr>
+                <tr>
+                    <td> Course</td>
+                    <td>@Html.EditorFor(model => model.stucourse)</td>
+                </tr>
+
+                <tr>
+                    <td>Year</td>
+                    <td>@Html.EditorFor(model => model.stuyear)</td>
+                </tr>
+                <tr>
+
+                    <td><input type="submit" value="Register" /></td>
+                   
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <button >@Html.ActionLink("Back to List", "Display")</button>
+                    </td>
+                </tr>
+
+            </table>
+        }
+
+
+        
+</body>
+</html>

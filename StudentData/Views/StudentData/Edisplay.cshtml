@@ -1,0 +1,183 @@
+﻿@model List<StudentData.Models.Studentdata>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Edisplay</title>
+        <style>
+            table {
+                text-align: center;
+                table-layout: auto;
+                margin-left: auto;
+                margin-right: auto;
+                border: 1px;
+                background-color : aqua;
+            }
+
+            h1 {
+                text-align: center;
+                font-size: 60px;
+                color: aquamarine;
+            }
+
+            th {
+                background-color: black;
+                color: white;
+                font-size: 30px;
+            }
+
+            th, td {
+                border-bottom: 1px solid #ddd;
+                color: white;
+            }
+
+            tr:hover {
+                background-color: lightgray;
+            }
+
+            td {
+                font-size: 23px;
+                background-color: yellow;
+                color: black;
+            }
+
+        body { background-image: url("https://ueat.utoronto.ca/wp-content/uploads/2015/04/super_study_snacks.jpg"); height: 100%; /* You must set a specified height */ background-position: center; /* Center the image */ background-repeat: no-repeat; /* Do not repeat the image */ background-size: cover; }
+
+            /* Style the navbar */
+            .topnav {
+                overflow: hidden;
+                background-color: transparent;
+                margin-top:0;
+                
+            }
+
+                /* Navbar links */
+                .topnav a {
+                    float: left;
+                    display: block;
+                    color: white;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                    font-size: 17px;
+                }
+
+                    /* Navbar links on mouse-over */
+                    .topnav a:hover {
+                        background-color: #ddd;
+                        color: black;
+                    }
+
+                    /* Active/current link */
+                    .topnav a.active {
+                        background-color: #2196F3;
+                        color: white;
+                    }
+
+                /* Style the input container */
+                .topnav .login-container {
+                    float: right;
+                }
+
+                /* Style the input field inside the navbar */
+                .topnav input[type=text] {
+                    padding: 6px;
+                    margin-top: 8px;
+                    font-size: 17px;
+                    border: none;
+                    width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+                }
+
+                /* Style the button inside the input container */
+                .topnav .login-container button {
+                    float: right;
+                    padding: 6px;
+                    margin-top: 8px;
+                    margin-right: 16px;
+                    background: #ddd;
+                    font-size: 17px;
+                    border: none;
+                    cursor: pointer;
+                }
+
+                    .topnav .login-container button:hover {
+                        background: #ccc;
+                    }
+        </style>
+    </head>
+    <body>
+        <div class="topnav">
+            <a class="active" href="Edisplay">Home</a>
+            <a href="@Url.Action("LogOut","Login")">Logout</a>
+            <a href="AddStudent">Register</a>
+            <a href="Display">Delete and Update</a>
+         
+
+        </div>
+
+        <h1>Student Details</h1>
+        <hr />
+        <div>
+
+            <table width="50%">
+                <tr>
+                    <th> ID</th>
+                    <th>First First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>Date of Birth</th>
+                    <th>Course</th>
+                    <th>Year</th>
+
+                </tr>
+
+                @foreach (var emp in Model)
+                {
+                    <tr>
+                        <td>@emp.stuid</td>
+                        <td>@emp.stufname</td>
+                        <td>@emp.stumname</td>
+                        <td>@emp.stulname</td>
+                        <td>@emp.studob</td>
+                        <td>@emp.stucourse</td>
+                        <td>@emp.stuyear</td>
+                    </tr>
+                }
+            </table>
+        </div>
+
+        @*<nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>*@
+
+
+        @*<div>
+            <h1> EVENT SCHEDULING</h1>
+        </div>*@
+    </body>
+</html>
+
