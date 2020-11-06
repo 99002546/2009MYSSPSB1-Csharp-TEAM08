@@ -46,7 +46,13 @@
                 color: black;
             }
 
-        body { background-image: url("https://ueat.utoronto.ca/wp-content/uploads/2015/04/super_study_snacks.jpg"); height: 100%; /* You must set a specified height */ background-position: center; /* Center the image */ background-repeat: no-repeat; /* Do not repeat the image */ background-size: cover; }
+            body {
+                background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("https://ueat.utoronto.ca/wp-content/uploads/2015/04/super_study_snacks.jpg");
+                height: 100vh; /* You must set a specified height */
+                background-position: center; /* Center the image */
+                background-repeat: no-repeat; /* Do not repeat the image */
+                background-size: cover;
+            }
 
             /* Style the navbar */
             .topnav {
@@ -108,6 +114,9 @@
                     .topnav .login-container button:hover {
                         background: #ccc;
                     }
+                    h1{
+                        color:black;
+                    }
         </style>
     </head>
     <body>
@@ -151,33 +160,7 @@
             </table>
         </div>
 
-        @*<nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>*@
-
-
-        @*<div>
-            <h1> EVENT SCHEDULING</h1>
-        </div>*@
+       
     </body>
 </html>
 
