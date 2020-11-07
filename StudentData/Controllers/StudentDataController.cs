@@ -30,12 +30,7 @@ namespace StudentData.Controllers
         }
 
 
-        /* public ViewResult Admin()
-         {
-             var context = new dat;
-             var model = context.Logins.ToList();
-             return View(model);
-         }*/
+     
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult MyAction(string button)
         {
@@ -67,10 +62,6 @@ namespace StudentData.Controllers
             model.stuphone = stu.stuphone;
             model.stucourse = stu.stucourse;
             model.stuyear = stu.stuyear;
-            /*model.eventname = emp.eventname;
-            model.eventplace = emp.eventplace;
-            model.eventdate = emp.eventdate;
-            model.eventcost = emp.eventcost;*/
             context.SaveChanges();
             return RedirectToAction("Display");
         }
