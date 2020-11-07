@@ -10,43 +10,137 @@
     <meta name="viewport" content="width=device-width" />
     <title>Find</title>
     <style>
-        h1 {
-            font-size: 50px;
-            text-align: center;
-            color: black;
+        * {
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            background-image: url("https://media.tegna-media.com/assets/KUSA/images/e01ec00b-44e5-4300-a35c-9f23624d0823/e01ec00b-44e5-4300-a35c-9f23624d0823.jpg");
-            height: 1000px; /* You must set a specified height */
+            background: #ecf1f4;
+            font-family: sans-serif;
+        }
+
+        .form-wrap {
+            width: 320px;
+            background: none;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+
+        body {
+            background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("https://i1.wp.com/getitwriteonline.com/wp-content/uploads/2018/10/woman-typing-writing-windows.jpg?fit=1280%2C578&ssl=1");
+            height: 100vh; /* You must set a specified height */
             background-position: center; /* Center the image */
             background-repeat: no-repeat; /* Do not repeat the image */
             background-size: cover;
         }
 
-        p {
-            font-size: 30px;
-            text-align: justify;
-            color: black;
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            font-weight: normal;
+            margin-bottom: 20px;
         }
+
+        input {
+            width: 100%;
+            background: none;
+            border: 1px solid #fff;
+            border-radius: 3px;
+            padding: 6px 15px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #fff;
+        }
+
+            input[type="button"] {
+                background: #bac675;
+                border: 0;
+                cursor: pointer;
+                color: #3e3d3d;
+            }
+
+                input[type="button"]:hover {
+                    background: #a4b15c;
+                    transition: .6s;
+                }
+
+            input[type="submit"] {
+                background: #bac675;
+                border: 0;
+                cursor: pointer;
+                color: #3e3d3d;
+            }
+
+                input[type="submit"]:hover {
+                    background: #a4b15c;
+                    transition: .6s;
+                }
     </style>
 </head>
 <body>
-    <h1>Update Event Details</h1>
+    <h1>Update Student Details</h1>
     <div>
         @using (Html.BeginForm())
         {
-            <p> Participant Id: @Html.EditorFor((m) => m.stuid)</p>
-            <p> Participant Name: @Html.EditorFor((m) => m.stufname)</p>
-            <p> Participant Name: @Html.EditorFor((m) => m.stumname)</p>
-            <p> Participant Name: @Html.EditorFor((m) => m.stulname)</p>
-            <p> Participant Address: @Html.EditorFor((m) => m.stuaddress)</p>
-            <p> Participant Phone: @Html.EditorFor((m) => m.stuphone)</p>
-            <p> Event Name: @Html.EditorFor((m) => m.studob)</p>
-            <p> Event Place: @Html.EditorFor((m) => m.stucourse)</p>
-            <p> Event Date: @Html.EditorFor((m) => m.stuyear)</p>
+           
 
-            <button>Save Changes</button>
+            <table class="form-wrap">
+                <tr>
+                    <td>ID</td>
+                    <td> @Html.EditorFor((m) => m.stuid)</td>
+                </tr>
+
+                <tr>
+                    <td> First Name</td>
+                    <td> @Html.EditorFor((m) => m.stufname)</td>
+                </tr>
+
+                <tr>
+                    <td>Middle Name</td>
+                    <td> @Html.EditorFor((m) => m.stumname)</td>
+                </tr>
+
+                <tr>
+                    <td>Last Name</td>
+                    <td>@Html.EditorFor((m) => m.stulname)</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td> @Html.EditorFor((m) => m.stuaddress)</td>
+
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>@Html.EditorFor((m) => m.stuphone)</td>
+</tr>
+                <tr>
+                    <td>Date of birth</td>
+                    <td> @Html.EditorFor((m) => m.studob)</td>
+                </tr>
+                <tr>
+                    <td> Course</td>
+                    <td>@Html.EditorFor((m) => m.stucourse)</td>
+                </tr>
+
+                <tr>
+                    <td>Year</td>
+                    <td>@Html.EditorFor((m) => m.stuyear)</td>
+                </tr>
+                <tr>
+
+                    <td><button>Save Changes</button></td>
+
+
+                </tr>
+            </table>
         }
     </div>
 </body>
