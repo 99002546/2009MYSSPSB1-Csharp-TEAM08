@@ -7,5 +7,7 @@ Student Management System
 
 Contributers:
 Angana Dawn: Done StudentData Controller, Edisplay Login amd AddStudent page styling along with creating STUDENTDATA database
+
 Rahul Rauniyar: Done Login controller, created Logintable database  with validation
+
 Binitta Michael: Done the Display, find page styling
